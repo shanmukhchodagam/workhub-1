@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: workhub-backend
+    env: docker
+    dockerfilePath: ./backend/Dockerfile
+    plan: free
+    # Environment variables will be set manually in Render dashboard
+    # Don't commit secrets to git!

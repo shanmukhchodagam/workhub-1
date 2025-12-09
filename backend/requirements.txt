@@ -11,4 +11,6 @@ requests
 python-dotenv
 sqlalchemy
 asyncpg
+psycopg2-binary
 httpx
+pydantic-settings

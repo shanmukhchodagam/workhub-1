@@ -1,12 +1,13 @@
 from pydantic_settings import BaseSettings
+from typing import Optional
 
 class Settings(BaseSettings):
     DATABASE_URL: str
-    REDIS_URL: str
-    MINIO_ENDPOINT: str
-    MINIO_ACCESS_KEY: str
-    MINIO_SECRET_KEY: str
-    MINIO_BUCKET: str
+    REDIS_URL: Optional[str] = None
+    MINIO_ENDPOINT: Optional[str] = None
+    MINIO_ACCESS_KEY: Optional[str] = None
+    MINIO_SECRET_KEY: Optional[str] = None
+    MINIO_BUCKET: Optional[str] = None
     SECRET_KEY: str
     API_PORT: int = 8000
 

@@ -40,7 +40,8 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:3000",
         "https://*.vercel.app",
-        "https://workhub-1.vercel.app"  # Your actual Vercel domain
+        "https://workhub-1.vercel.app",
+        "https://workhub-1-hf61gxu6u-shanmukhs-projects-e0a15372.vercel.app"  # New Vercel URL
     ],
     allow_credentials=True,
     allow_methods=["*"],

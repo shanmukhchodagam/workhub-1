@@ -22,3 +22,6 @@ jinja2
 google-auth
 google-auth-oauthlib
 google-auth-httplib2
+alembic
+typing-extensions
+annotated-types

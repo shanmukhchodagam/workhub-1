@@ -16,3 +16,5 @@ httpx
 pydantic-settings
 python-jose[cryptography]
 passlib[bcrypt]
+aiosmtplib
+email-validator

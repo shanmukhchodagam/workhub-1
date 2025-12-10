@@ -7,10 +7,23 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from typing import List, Optional
 import asyncio
-import aiosmtplib
-from jinja2 import Environment, BaseLoader
 import os
 from app.core.config import settings
+
+# Try to import aiosmtplib, handle gracefully if not available
+try:
+    import aiosmtplib
+    AIOSMTPLIB_AVAILABLE = True
+except ImportError:
+    AIOSMTPLIB_AVAILABLE = False
+    print("⚠️ aiosmtplib not available, email functionality will be limited")
+
+try:
+    from jinja2 import Environment, BaseLoader
+    JINJA2_AVAILABLE = True
+except ImportError:
+    JINJA2_AVAILABLE = False
+    print("⚠️ jinja2 not available, email templates will be basic")
 
 class EmailService:
     def __init__(self):
@@ -35,6 +48,10 @@ class EmailService:
     ) -> bool:
         """Send an email asynchronously"""
         try:
+            if not AIOSMTPLIB_AVAILABLE:
+                print("⚠️ Email service unavailable - aiosmtplib not installed")
+                return False
+                
             if not self.email_username or not self.email_password:
                 print("❌ Email credentials not configured!")
                 return False

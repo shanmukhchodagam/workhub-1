@@ -18,3 +18,7 @@ python-jose[cryptography]
 passlib[bcrypt]
 aiosmtplib
 email-validator
+jinja2
+google-auth
+google-auth-oauthlib
+google-auth-httplib2

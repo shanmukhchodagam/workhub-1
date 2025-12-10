@@ -11,27 +11,9 @@ import asyncio
 import sys
 import os
 
-# Add current directory to Python path for agent import
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-sys.path.append('/app')
-
-# Import agent functionality
-try:
-    from agent import WorkflowAgent
-    AGENT_AVAILABLE = True
-    print("✅ Agent imported successfully")
-except ImportError as e:
-    AGENT_AVAILABLE = False
-    print(f"❌ Agent import failed: {e}")
-
-# Initialize agent if available
-if AGENT_AVAILABLE:
-    try:
-        agent = WorkflowAgent()
-        print("✅ Agent initialized successfully")
-    except Exception as e:
-        AGENT_AVAILABLE = False
-        print(f"❌ Agent initialization failed: {e}")
+# Temporarily disable agent functionality for deployment
+AGENT_AVAILABLE = False
+print("⚠️ Agent functionality temporarily disabled for deployment")
 
 app = FastAPI(title="Workhub API")
 
